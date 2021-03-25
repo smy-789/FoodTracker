@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBOutlet weak var photoImageView: UIImageView!
     
+    @IBOutlet weak var ratingControl: RatingControl!
     /* 当视图控制器从故事板加载时，系统会实例化视图层次结构，并将适当的值分配给所有视图控制器的插座。当调用视图控制器的viewDidLoad()方法时，系统已为控制器的所有插座分配了有效值，您可以安全地访问其内容。*/
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,21 +92,4 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         /* present() 是正在ViewController上调用的方法。虽然它不是显式编写的，但是这个方法是在隐式self对象上执行的。该方法要求ViewController显示由imagePickerController定义的视图控制器。将true传递给动画参数会使图像选取器控制器的显示动画化。completion参数是指一个完成处理程序，一段在这个方法完成后执行的代码。因为您不需要执行任何其他操作，所以通过传入nil来指示您不需要执行完成处理程序。*/
         present(imagePickerController, animated: true, completion: nil)
     }
-    
-    /* UIButton的Type字段的值默认为AnyObject。在Swift中，AnyObject是一种类型，用于描述可以属于任何类的对象。指定此操作方法的类型为UIButton意味着只有按钮对象可以连接到此操作。虽然这对你现在正在创建的行动来说意义不大，但以后记住这一点很重要。
-     
-        sender参数是指在本例中负责触发操作的对象，即按钮。IBAction属性表示该方法是一个可以从InterfaceBuilder中的情节提要连接到的操作。声明的其余部分声明了一个名为setDefaultLabelText（）的方法）。*/
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        //目标动作模式：当特定事件发生时，一个对象向另一个对象发送消息
-        /*在这种情况下：
-         
-         事件是用户点击“设置默认文本”按钮。
-         操作方法是setDefaultLabelText()。
-         目标是ViewController（其中定义了操作方法）。
-         发送方是“设置默认标签文本”按钮*/
-        mealNameLabel.text = "Default Text"
-    }
-    
 }
-
-  
