@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  FoodTracker
 //
 //  Created by 盛明钰 on 2021/3/17.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties 标记：属性
     /* 以字符//MARK:开头的注释是一种特殊类型的注释，用于组织您的代码，并帮助您（以及任何阅读代码的人）浏览代码。你稍后会看到这个在起作用。具体而言，您添加的注释表明这是代码中列出属性的部分。
@@ -18,9 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     /*
         IBOutlet属性告诉Xcode您可以从Interface Builder连接到nameTextField属性（这就是为什么该属性具有IB前缀）。弱关键字（weak）表示引用不会阻止系统取消分配引用的对象。弱引用有助于防止引用循环；但是，要使对象保持活动状态并保留在内存中，您需要确保应用程序的其他部分对该对象具有强引用。在本例中，它是文本字段的超级视图。超视图维护对其所有子视图的强引用。只要超视图在内存中保持活动状态，所有子视图也保持活动状态。类似地，视图控制器对其内容视图有一个强引用，使整个视图层次结构保持活动并在内存中。*/
     @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var mealNameLabel: UILabel!
-    
+        
     @IBOutlet weak var photoImageView: UIImageView!
     
     @IBOutlet weak var ratingControl: RatingControl!
@@ -45,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mealNameLabel.text = textField.text;
+
     }
     
     //MARK: UIImagePickerControllerDelegate
